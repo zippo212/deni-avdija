@@ -22,11 +22,9 @@ function App() {
     fetch('/game_logs').then(res => res.json()).then(
       data => {
         setGameLogs(data.PlayerGameLog)
-        console.log(data.PlayerGameLog[0]);
       }
       )
     }, [])
-    console.log(gameLogs[0])
   return (
     <div className='bg-[#0b0e13] text-[#fff]'>
         <Header />
