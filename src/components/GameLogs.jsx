@@ -5,6 +5,10 @@ import GameLogsDetailed from './GameLogsDetailed'
 
 export default function GameLogs({ data }) {
   const [isPressed , setIsPressed] = useState(false)
+
+  function handleClick() {
+    setIsPressed(!isPressed)
+  }
   
   return (
 <div className='flex flex-col items-center'>
@@ -12,12 +16,12 @@ export default function GameLogs({ data }) {
         <h4 className='font-bold text-lg'>Last Games</h4>
         <GameLogBox data={data}/>
         <button
-          onClick={() => setIsPressed(!isPressed)}
+          onClick={handleClick}
           className='w-40 h-10 rounded-full bg-[#ffd600] text-black font-medium'>
           DETAILED STATS
         </button>
     </div>
-    {isPressed && <GameLogsDetailed data={data} closeBtn={setIsPressed}/>}
+    <GameLogsDetailed data={data} toggle={isPressed} handle={handleClick}/>
 </div>
   )
 }

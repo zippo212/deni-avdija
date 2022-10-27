@@ -1,8 +1,27 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
-export default function GameLogsDetailed({ data,closeBtn }) {
-    
+
+export default function GameLogsDetailed({ data, toggle, handle }) {
+    const box = useRef();
+    const tl = useRef();
+
+
+    useEffect(() => {
+        tl.current = gsap.timeline({ paused:true })
+        tl.current.to(box.current, {
+            y: 0,
+            duration: 0.7,
+            ease: 'power3',
+        })
+    }, [])
+
+    useEffect(() => {
+        toggle ? tl.current.play() : tl.current.reverse()
+    }, [toggle])
+
   return (
-    <div className='fixed top-0 md:top-5 bg-white h-full md:h-[calc(100%-1.25rem)] w-full md:w-[calc(100%-2rem)] z-50 shadow-md'>
+    <div className='fixed top-0 md:top-5 bg-white h-full md:h-[calc(100%-1.25rem)] w-full md:w-[calc(100%-2rem)] z-50 shadow-md translate-y-[100vh]' ref={box}>
         <div className='bg-white py-3 relative'>
             <h2 className='flex flex-col items-center space-y-0.5'>
                 <span className='text-[#a0aec0] text-xs'>DENI AVDIJA STATS</span>
@@ -14,7 +33,7 @@ export default function GameLogsDetailed({ data,closeBtn }) {
                 </p>
             </h2>
             <button
-                onClick={() => closeBtn(false)}
+                onClick={() => handle(!toggle)}
                 className='bg-[#ffd600] px-6 py-4 absolute top-0 right-0'>
                 xx
             </button>
