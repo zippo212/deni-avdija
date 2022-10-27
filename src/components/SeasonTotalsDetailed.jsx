@@ -17,7 +17,13 @@ export default function SeasonTotalsDetailed({ data, toggle, handle }) {
     }, [])
 
     useEffect(() => {
-        toggle ? tl.current.play() : tl.current.reverse()
+        if(toggle) {
+            document.body.style.overflow = 'hidden';
+            tl.current.play()
+        } else {
+            tl.current.reverse()
+            document.body.style.overflow = 'unset';
+        }
     }, [toggle])
 
 

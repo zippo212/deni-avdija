@@ -17,7 +17,13 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
     }, [])
 
     useEffect(() => {
-        toggle ? tl.current.play() : tl.current.reverse()
+        if(toggle) {
+            tl.current.play()
+            document.body.style.overflow = 'hidden';
+        } else {
+            tl.current.reverse()
+            document.body.style.overflow = 'unset';
+        }
     }, [toggle])
 
   return (
