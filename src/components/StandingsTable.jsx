@@ -1,8 +1,13 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
+
 
 export default function StandingsTable({ data }) {
+    const icon = <FontAwesomeIcon icon={faStar} size="sm" color="#ffd600"/>
   return (
-    <div className='bg-[#1e2633]  w-full md:w-10/12 flex flex-row space-x-1 items-center'>
+    <div className='bg-[#1e2633]  w-full md:w-10/12 flex flex-row space-x-1 items-center '>
         <div className="overflow-x-auto">
             <table className="table-auto w-full text-sm text-left text-white">
                 <thead className='"text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
@@ -27,11 +32,11 @@ export default function StandingsTable({ data }) {
                 {data.map((game,i) => 
                 <tbody>
                     <tr className="border-b border-[#0b0e13] whitespace-nowrap" 
-                        style={{backgroundColor: i % 2 === 0 ? "#1e2633" : "#13181f",
+                        style={{backgroundColor: i % 2 === 0 ? "#1e2633" : "#0b0e13",
                         borderBottom: i === 5 ? '2px dashed' : i === 9 ? '2px solid' : ''
                         }}>
                         <td className="py-1 md:py-2 px-5 md:px-6">{i+1}</td>
-                        <td className="py-1 md:py-2 px-5 md:px-6">{`${game.TeamCity} ${game.TeamName}`}</td>
+                        <td className="py-1 md:py-2 px-5 md:px-6">{`${game.TeamCity} ${game.TeamName}`}<span className='pl-1'>{game.TeamName === 'Wizards' ? icon : ''}</span></td>
                         <td className="py-1 md:py-2 px-4">{game.WINS}</td>
                         <td className="py-1 md:py-2 px-4">{game.LOSSES}</td>
                         <td className="py-1 md:py-2 px-4">{(game.WinPCT * 100).toFixed(1)}</td>

@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+
 
 
 export default function GameLogsDetailed({ data, toggle, handle }) {
@@ -40,42 +43,42 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
             </h2>
             <button
                 onClick={() => handle(!toggle)}
-                className='bg-[#ffd600] px-6 py-4 absolute top-0 right-0'>
-                xx
+                className='bg-[#ffd600] px-7 py-4 absolute top-0 right-0'>
+                <FontAwesomeIcon icon={faXmark} size="lg" color="black"/>
             </button>
         </div>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto ">
             <table className="table-auto w-full text-sm text-left text-gray-500">
                 <thead className='"text-xs text-[#4a5568] uppercase bg-gray-300'>
                     <tr>
-                        <th scope='col' className='py-2 md:py-3 px-5 md:px-6'>GAME DATE</th>
-                        <th scope='col' className='py-2 md:py-3 px-5 md:px-6'>MATCHUP</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>W/L</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>MIN</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>PTS</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>FGM</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>FGA</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>FG%</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>3PM</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>3PA</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>3P%</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>FTM</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>FTA</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>FT%</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>OREB</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>DREB</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>REB</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>AST</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>STL</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>BLK</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>TOV</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>PF</th>
-                        <th scope='col' className='py-2 md:py-3 px-3'>+/-</th>
+                        <th scope='col' className='py-3 px-5 md:px-6'>GAME DATE</th>
+                        <th scope='col' className='py-3 px-5 md:px-6'>MATCHUP</th>
+                        <th scope='col' className='py-3 px-3'>W/L</th>
+                        <th scope='col' className='py-3 px-3'>MIN</th>
+                        <th scope='col' className='py-3 px-3'>PTS</th>
+                        <th scope='col' className='py-3 px-3'>FGM</th>
+                        <th scope='col' className='py-3 px-3'>FGA</th>
+                        <th scope='col' className='py-3 px-3'>FG%</th>
+                        <th scope='col' className='py-3 px-3'>3PM</th>
+                        <th scope='col' className='py-3 px-3'>3PA</th>
+                        <th scope='col' className='py-3 px-3'>3P%</th>
+                        <th scope='col' className='py-3 px-3'>FTM</th>
+                        <th scope='col' className='py-3 px-3'>FTA</th>
+                        <th scope='col' className='py-3 px-3'>FT%</th>
+                        <th scope='col' className='py-3 px-3'>OREB</th>
+                        <th scope='col' className='py-3 px-3'>DREB</th>
+                        <th scope='col' className='py-3 px-3'>REB</th>
+                        <th scope='col' className='py-3 px-3'>AST</th>
+                        <th scope='col' className='py-3 px-3'>STL</th>
+                        <th scope='col' className='py-3 px-3'>BLK</th>
+                        <th scope='col' className='py-3 px-3'>TOV</th>
+                        <th scope='col' className='py-3 px-3'>PF</th>
+                        <th scope='col' className='py-3 px-3'>+/-</th>
                     </tr>
                 </thead>
                 {data.map((game,i) => 
                 <tbody>
-                    <tr className="border-b" style={{backgroundColor: i % 2 === 0 ? "rgb(255,255,255)" : "rgb(209 213 219)"}}>
+                    <tr className="md:whitespace-nowrap text-white font-semibold" style={{backgroundColor: i % 2 === 0 ? "#00b9bf" : "#fe317e"}}>
                         <td className="py-1 md:py-4 px-5 md:px-6">{game.GAME_DATE}</td>
                         <td className="py-1 md:py-4 px-5 md:px-6">{game.MATCHUP}</td>
                         <td className="py-1 md:py-4 px-4">{game.WL}</td>

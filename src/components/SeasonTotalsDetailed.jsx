@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import StatsBox from './StatsBox'
 import gsap from "gsap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function SeasonTotalsDetailed({ data, toggle, handle }) {
@@ -43,7 +45,7 @@ export default function SeasonTotalsDetailed({ data, toggle, handle }) {
             <button
                 onClick={() => handle(!toggle)}
                 className='bg-[#ffd600] px-6 py-4 absolute top-0 right-0'>
-                xx
+                <FontAwesomeIcon icon={faXmark} size="lg" color="black"/>
             </button>
         </div>
         <div className='h-full overflow-auto pb-36'>
