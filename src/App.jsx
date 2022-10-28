@@ -3,6 +3,7 @@ import AllTime from './components/AllTime'
 import GameLogs from './components/GameLogs'
 import Header from './components/Header'
 import SeasonTotals from './components/SeasonTotals'
+import Standings from './components/Standings'
 
 
 
@@ -11,6 +12,7 @@ function App() {
   const [ careerData , setCareerData ] = useState([{}])
   const [ seasonData , setSeasonData ] = useState([{}])
   const [ gameLogs, setGameLogs ] = useState([{}])
+  const [ standings, setStandings ] = useState([{}])
 
   useEffect(() =>{
     fetch('/nba').then(res => res.json()).then(
@@ -24,6 +26,11 @@ function App() {
         setGameLogs(data.PlayerGameLog)
       }
       )
+    fetch('/standings').then(res => res.json()).then(
+      data => {
+        setStandings(data.Standings)
+      }
+      )
     }, [])
   return (
     <div className='bg-[#0b0e13] text-[#fff]'>
@@ -31,6 +38,7 @@ function App() {
         <GameLogs data={gameLogs}/>
         <SeasonTotals data={seasonData}/>
         <AllTime data={careerData}/>
+        <Standings data={standings}/>
     </div>
   )
 }
