@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import AllTime from './components/AllTime'
-import GameLogs from './components/GameLogs'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Around from './components/Around'
 import Header from './components/Header'
-import SeasonTotals from './components/SeasonTotals'
-import Standings from './components/Standings'
-
-
+import Home from './components/Home'
 
 function App() {
 
@@ -13,32 +14,42 @@ function App() {
   const [ seasonData , setSeasonData ] = useState([{}])
   const [ gameLogs, setGameLogs ] = useState([{}])
   const [ standings, setStandings ] = useState([{}])
+  const [ teamLead, setTeamLead ] = useState([{}])
+  const [ playerLead, setPlayerLead ] = useState([{}])
 
   useEffect(() =>{
-    fetch('/nba').then(res => res.json()).then(
-      data => {
+    fetch('/nba').then(res => res.json()).then(data => {
         setCareerData(data.CareerTotalsRegularSeason[0])
         setSeasonData(data.SeasonTotalsRegularSeason[2])
-      }
-      )
-    fetch('/game_logs').then(res => res.json()).then(
-      data => {
+      })
+      
+    fetch('/game_logs').then(res => res.json()).then(data => {
         setGameLogs(data.PlayerGameLog)
-      }
-      )
-    fetch('/standings').then(res => res.json()).then(
-      data => {
+      })
+      
+    fetch('/standings').then(res => res.json()).then(data => {
         setStandings(data.Standings)
-      }
-      )
+      })
+
+    fetch('/team_lead').then(res => res.json()).then(data => {
+      setTeamLead(data);
+      })
+
+    fetch('/player_lead').then(res => res.json()).then(data => {
+      setPlayerLead(data);
+      })
     }, [])
+
   return (
     <div className='bg-[#0b0e13] text-[#fff]'>
+
+        <BrowserRouter>
         <Header />
-        <GameLogs data={gameLogs}/>
-        <SeasonTotals data={seasonData}/>
-        <AllTime data={careerData}/>
-        <Standings data={standings}/>
+          <Routes>
+            <Route path="/" element={<Home gameLogs={gameLogs} seasonData={seasonData} careerData={careerData} standings={standings}/>} />
+            <Route path='/around' element={<Around standings={standings} team={teamLead} player={playerLead}/>} />
+          </Routes>
+        </BrowserRouter>
     </div>
   )
 }

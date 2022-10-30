@@ -30,7 +30,7 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
     }, [toggle])
 
   return (
-    <div className='fixed top-0 md:top-5 bg-white h-full md:h-[calc(100%-1.25rem)] w-full md:w-[calc(100%-2rem)] z-50 shadow-md translate-y-[100vh]' ref={box}>
+    <div className='fixed top-0 md:top-5 bg-white h-full md:h-[calc(100%-1.25rem)] w-full md:w-[calc(100%-2rem)] z-50 shadow-lg translate-y-[100vh]' ref={box}>
         <div className='bg-white py-3 relative'>
             <h2 className='flex flex-col items-center space-y-0.5'>
                 <span className='text-[#a0aec0] text-xs'>DENI AVDIJA STATS</span>
