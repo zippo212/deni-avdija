@@ -17,6 +17,7 @@ function App() {
   const [ teamLead, setTeamLead ] = useState([{}])
   const [ playerLead, setPlayerLead ] = useState([{}])
   const [ playerInfo, setPlayerInfo ] = useState([{}])
+  const [ nextGames, setNextGames ] = useState([{}])
 
   useEffect(() =>{
     fetch('/nba').then(res => res.json()).then(data => {
@@ -43,15 +44,18 @@ function App() {
     fetch('/player_info').then(res => res.json()).then(data => {
       setPlayerInfo(data)
       })
+
+    fetch('/next_games').then(res => res.json()).then(data => {
+      setNextGames(data.NextNGames[0])
+      })
     }, [])
 
   return (
     <div className='bg-[#0b0e13] text-[#fff]'>
-
         <BrowserRouter>
         <Header />
           <Routes>
-            <Route path="/" element={<Home gameLogs={gameLogs} seasonData={seasonData} careerData={careerData} standings={standings} profile={playerInfo}/>} />
+            <Route path="/" element={<Home gameLogs={gameLogs} seasonData={seasonData} careerData={careerData} standings={standings} profile={playerInfo} next={nextGames}/>} />
             <Route path='/around' element={<Around standings={standings} team={teamLead} player={playerLead}/>} />
           </Routes>
         </BrowserRouter>

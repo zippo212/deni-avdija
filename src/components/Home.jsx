@@ -5,10 +5,10 @@ import Profile from './Profile'
 import SeasonTotals from './SeasonTotals'
 import Standings from './Standings'
 
-export default function Home({ gameLogs,seasonData,careerData,standings,profile }) {
+export default function Home({ gameLogs,seasonData,careerData,standings,profile,next }) {
   return (
     <>
-        <GameLogs data={gameLogs}/>
+        <GameLogs data={gameLogs} next={next}/>
         <SeasonTotals data={seasonData}/>
         <AllTime data={careerData}/>
         <Standings data={standings}/>

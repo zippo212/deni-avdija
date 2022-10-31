@@ -10,7 +10,11 @@ export default function Header() {
     <nav className='py-4 bg-[#141a23] w-full sticky top-0 shadow-lg z-50'>
       <ul className='flex justify-evenly text-sm font-semibold'>
 
-        <li><HashLink exact to='/#profile' 
+        <li><NavLink to="/" end
+        className={({ isActive }) => (isActive ? 'text-[#ffd600]' : '')}
+        >Home</NavLink></li>
+
+        <li><HashLink to='/#profile' 
         scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
         >Profile</HashLink></li>
 
