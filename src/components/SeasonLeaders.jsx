@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function SeasonLeaders({ data, type }) {
-    console.log(data);
   return (
     <div className='grid grid-cols-3 w-full'>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
