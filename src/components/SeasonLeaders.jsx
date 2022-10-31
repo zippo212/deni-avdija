@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SeasonLeaders({ data, type }) {
   return (
-    <div className='grid grid-cols-3 w-full'>
+    <div className='grid sm:grid-cols-2 md:grid-cols-3 w-full whitespace-nowrap'>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
                 <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
                     <tr>

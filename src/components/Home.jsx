@@ -12,7 +12,10 @@ export default function Home({ gameLogs,seasonData,careerData,standings,profile 
         <SeasonTotals data={seasonData}/>
         <AllTime data={careerData}/>
         <Standings data={standings}/>
-        <Profile data={profile}/>
+        <section id='profile'>
+            <Profile data={profile}/>
+        </section>
+        
     </>
   )
 }

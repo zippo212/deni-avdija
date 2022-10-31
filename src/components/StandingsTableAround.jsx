@@ -7,7 +7,7 @@ export default function StandingsTableAround({ data,conf }) {
     return (
         <div className='bg-[#1e2633]  w-full lg:w-11/12 flex flex-row space-x-1 items-center h-full'>
             <div className="overflow-x-auto">
-                <table className="table-auto w-full text-sm text-left text-white mb-4">
+                <table className="table-auto w-full text-sm text-left text-white">
                     <thead className='"text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
                         <tr>
                             <th scope='col' className='py-2 md:py-3 px-3'>RANK</th>
@@ -33,21 +33,21 @@ export default function StandingsTableAround({ data,conf }) {
                             style={{backgroundColor: i % 2 === 0 ? "#1e2633" : "#0b0e13",
                             borderBottom: i === 5 ? '2px dashed' : i === 9 ? '2px solid' : ''
                             }}>
-                            <td className="py-1 md:py-2 px-5 md:px-6">{i+1}</td>
-                            <td className="py-1 md:py-2 px-5 md:px-6">{`${game.TeamCity} ${game.TeamName}`}</td>
-                            <td className="py-1 md:py-2 px-4">{game.WINS}</td>
-                            <td className="py-1 md:py-2 px-4">{game.LOSSES}</td>
-                            <td className="py-1 md:py-2 px-4">{(game.WinPCT * 100).toFixed(1)}</td>
-                            <td className="py-1 md:py-2 px-4">{game.ConferenceGamesBack}</td>
-                            <td className="py-1 md:py-2 px-4">{game.ConferenceRecord}</td>
-                            <td className="py-1 md:py-2 px-4">{game.HOME}</td>
-                            <td className="py-1 md:py-2 px-4">{game.ROAD}</td>
-                            <td className="py-1 md:py-2 px-4">{game.OT}</td>
-                            <td className="py-1 md:py-2 px-4">{game.L10}</td>
-                            <td className="py-1 md:py-2 px-4">{game.strCurrentStreak}</td>
-                            <td className="py-1 md:py-2 px-4">{game.PointsPG}</td>
-                            <td className="py-1 md:py-2 px-4">{game.OppPointsPG}</td>
-                            <td className="py-1 md:py-2 px-4">{game.DiffPointsPG}</td>
+                            <td className="py-1 md:py-2.5 px-5 md:px-6">{i+1}</td>
+                            <td className="py-1 md:py-2.5 px-5 md:px-6">{`${game.TeamCity} ${game.TeamName}`}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.WINS}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.LOSSES}</td>
+                            <td className="py-1 md:py-2.5 px-4">{(game.WinPCT * 100).toFixed(1)}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.ConferenceGamesBack}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.ConferenceRecord}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.HOME}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.ROAD}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.OT}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.L10}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.strCurrentStreak}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.PointsPG}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.OppPointsPG}</td>
+                            <td className="py-1 md:py-2.5 px-4">{game.DiffPointsPG}</td>
                         </tr>
                     </tbody>
                     )}

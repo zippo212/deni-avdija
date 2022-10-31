@@ -1,13 +1,23 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 
 
 export default function Header() {
   return (
   <>
     <nav className='py-4 bg-[#141a23] w-full sticky top-0 shadow-lg z-50'>
-      <ul className='flex justify-around text-sm font-semibold'>
-        <li><Link to={'/around'} >Around the Legue</Link></li>
+      <ul className='flex justify-evenly text-sm font-semibold'>
+
+        <li><HashLink exact to='/#profile' 
+        scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
+        >Profile</HashLink></li>
+
+        <li><NavLink to='/around'
+        className={({ isActive }) => (isActive ? 'text-[#ffd600]' : '')}
+        >Around the league</NavLink></li>
+
       </ul>
     </nav>
     <div className='flex justify-center py-20'>
