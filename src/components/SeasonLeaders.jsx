@@ -4,7 +4,7 @@ export default function SeasonLeaders({ data, type }) {
   return (
     <div className='grid sm:grid-cols-2 md:grid-cols-3 w-full whitespace-nowrap'>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>POINTS PER GAME</th>
                     </tr>
@@ -19,7 +19,7 @@ export default function SeasonLeaders({ data, type }) {
                 </tbody>
         </table>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>REBOUNDS PER GAME</th>
                     </tr>
@@ -34,7 +34,7 @@ export default function SeasonLeaders({ data, type }) {
                 </tbody>
         </table>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>ASSISTS PER GAME</th>
                     </tr>
@@ -49,7 +49,7 @@ export default function SeasonLeaders({ data, type }) {
                 </tbody>
         </table>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>BLOCKS PER GAME</th>
                     </tr>
@@ -64,7 +64,7 @@ export default function SeasonLeaders({ data, type }) {
                 </tbody>
         </table>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>STEALS PER GAME</th>
                     </tr>
@@ -79,7 +79,7 @@ export default function SeasonLeaders({ data, type }) {
                 </tbody>
         </table>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>FIELD GOAL PERCENTAGE</th>
                     </tr>
@@ -94,7 +94,7 @@ export default function SeasonLeaders({ data, type }) {
                 </tbody>
         </table>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>THREE POINT PERCENTAGE</th>
                     </tr>
@@ -109,7 +109,7 @@ export default function SeasonLeaders({ data, type }) {
                 </tbody>
         </table>
         <table className="table-auto  text-sm text-left text-white w-10/12 mx-auto mb-4">
-                <thead className='text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                <thead className='text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                     <tr>
                         <th scope='col' className='py-1 pl-1'>FREE THROW PERCENTAGE</th>
                     </tr>

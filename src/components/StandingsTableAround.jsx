@@ -8,7 +8,7 @@ export default function StandingsTableAround({ data,conf }) {
         <div className='bg-[#1e2633]  w-full lg:w-11/12 flex flex-row space-x-1 items-center h-full'>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full text-sm text-left text-white">
-                    <thead className='"text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
+                    <thead className='"text-xs text-[#a0aec0] uppercase bg-[#0b0e13]'>
                         <tr>
                             <th scope='col' className='py-2 md:py-3 px-3'>RANK</th>
                             <th scope='col' className='py-2 md:py-3 px-5 md:px-6'>NAME</th>

@@ -4,7 +4,6 @@ import deniImg from '../img/washington-wizards-deni-avdija-min--hcrs3yiz.png'
 export default function Profile({ data }) {
     const info = data.CommonPlayerInfo ? data.CommonPlayerInfo[0] : []
     const headline = data.PlayerHeadlineStats ? data.PlayerHeadlineStats[0] : []
-    console.log(data.PlayerHeadlineStats);
   return (
     <div className='flex flex-col items-center pt-6'>
         <h4 className='text-[#ffd600] font-semibold'>Profile</h4>

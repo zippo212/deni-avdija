@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import GameLogBox from './GameLogBox'
 import GameLogsDetailed from './GameLogsDetailed'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function GameLogs({ data,next }) {
   const [isPressed , setIsPressed] = useState(false)
@@ -17,8 +19,9 @@ export default function GameLogs({ data,next }) {
         <GameLogBox data={data} next={next}/>
         <button
           onClick={handleClick}
-          className='w-40 h-10 rounded-full bg-[#ffd600] text-black font-medium'>
-          DETAILED STATS
+          className='w-40 h-9 rounded-full bg-[#ffd600] space-x-2'>
+          <span className='text-black font-semibold text-sm pl-2 pr-1'>DETAILED STATS</span> 
+          <FontAwesomeIcon icon={faCirclePlus} size="lg" color="black"/>
         </button>
     </div>
     <GameLogsDetailed data={data} toggle={isPressed} handle={handleClick}/>

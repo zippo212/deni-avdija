@@ -5,7 +5,8 @@ import teamLogo from '../img/kindpng_1911128.png'
 
 
 
-export default function Header() {
+export default function Header({data}) {
+  console.log(data);
   return (
   <>
     <nav className='py-4 bg-[#141a23] w-full sticky top-0 shadow-lg z-50'>
