@@ -31,7 +31,7 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
     }, [toggle])
 
   return (
-    <div className='fixed top-0 md:top-5 bg-white h-full md:h-[calc(100%-1.25rem)] w-full md:w-[calc(100%-2rem)] z-50 shadow-lg translate-y-full hidden' ref={box}>
+    <div className='fixed top-0 lg:top-5 bg-white h-full lg:h-[calc(100%-1.25rem)] w-full lg:w-[calc(100%-2rem)] z-50 shadow-lg translate-y-full hidden overflow-y-auto' ref={box}>
         <div className='bg-white py-3 relative'>
             <h2 className='flex flex-col items-center space-y-0.5'>
                 <span className='text-[#a0aec0] text-xs'>DENI AVDIJA STATS</span>
@@ -48,7 +48,7 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
                 <FontAwesomeIcon icon={faXmark} size="lg" color="black"/>
             </button>
         </div>
-        <div className="overflow-x-auto ">
+        <div className="overflow-x-auto">
             <table className="table-auto w-full text-sm text-left text-gray-500">
                 <thead className='"text-xs text-[#4a5568] uppercase bg-gray-300'>
                     <tr>
@@ -77,9 +77,9 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
                         <th scope='col' className='py-3 px-3'>+/-</th>
                     </tr>
                 </thead>
-                {data.map((game,i) => 
                 <tbody>
-                    <tr className="md:whitespace-nowrap text-white font-semibold" style={{backgroundColor: i % 2 === 0 ? "#00b9bf" : "#fe317e"}}>
+                {data.map((game,i) => 
+                    <tr key={game.Game_ID} className="md:whitespace-nowrap text-white font-semibold" style={{backgroundColor: i % 2 === 0 ? "#00b9bf" : "#fe317e"}}>
                         <td className="py-1 md:py-4 px-5 md:px-6">{game.GAME_DATE}</td>
                         <td className="py-1 md:py-4 px-5 md:px-6">{game.MATCHUP}</td>
                         <td className="py-1 md:py-4 px-4">{game.WL}</td>
@@ -104,8 +104,8 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
                         <td className="py-1 md:py-4 px-4">{game.PF}</td>
                         <td className="py-1 md:py-4 px-4">{game.PLUS_MINUS}</td>
                     </tr>
-                </tbody>
                 )}
+                </tbody>
             </table>
         </div>
     </div>

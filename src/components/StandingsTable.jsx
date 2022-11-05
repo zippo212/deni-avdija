@@ -29,9 +29,9 @@ export default function StandingsTable({ data }) {
                         <th scope='col' className='py-2 md:py-3 px-3'>DIFF</th>
                     </tr>
                 </thead>
-                {data.map((game,i) => 
                 <tbody>
-                    <tr className="border-b border-[#0b0e13] whitespace-nowrap" 
+                {data.map((game,i) => 
+                    <tr key={game.TeamID} className="border-b border-[#0b0e13] whitespace-nowrap" 
                         style={{backgroundColor: i % 2 === 0 ? "#1e2633" : "#0b0e13",
                         borderBottom: i === 5 ? '2px dashed' : i === 9 ? '2px solid' : ''
                         }}>
@@ -51,8 +51,8 @@ export default function StandingsTable({ data }) {
                         <td className="py-1 md:py-2 px-4">{game.OppPointsPG}</td>
                         <td className="py-1 md:py-2 px-4">{game.DiffPointsPG}</td>
                     </tr>
-                </tbody>
                 )}
+                </tbody>
             </table>
         </div>
     </div>  

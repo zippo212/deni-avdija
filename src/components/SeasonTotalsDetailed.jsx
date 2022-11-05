@@ -31,7 +31,7 @@ export default function SeasonTotalsDetailed({ data, toggle, handle }) {
 
 
   return (
-    <div className='fixed top-0 xl:top-5 bg-white h-full xl:h-[calc(100%-1.25rem)] w-full xl:w-[calc(100%-2rem)] z-50 shadow-md translate-y-full hidden' ref={box}
+    <div className='fixed top-0 lg:top-5 bg-white h-full lg:h-[calc(100%-1.25rem)] w-full lg:w-[calc(100%-2rem)] z-50 shadow-md translate-y-full hidden' ref={box}
     >
         <div className='bg-white pt-3 sticky top-0 shadow-lg'>
             <h2 className='flex flex-col items-center space-y-0.5'>

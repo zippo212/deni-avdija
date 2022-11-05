@@ -33,14 +33,16 @@ function App() {
       try {
         const results = await Promise.all([
           fetch('/nba'),
-          fetch('/game_logs'),fetch('/standings'),
-          fetch('/team_lead'),fetch('/player_lead'),fetch('/player_info'),
+          fetch('/game_logs'),
+          fetch('/standings'),
+          fetch('/team_lead'),
+          fetch('/player_lead'),
+          fetch('/player_info'),
           fetch('/next_games')
         ])
         const finalData = await Promise.all(results.map(result => result.json())) 
           localStorage.setItem('data',JSON.stringify({finalData, receivedAt: new Date()}))
           setNbaApiData(JSON.parse(localStorage.getItem('data')))
-          console.log(JSON.parse(localStorage.getItem('data')))
       } catch (err) {
         console.error(err);
       }
@@ -56,7 +58,7 @@ function App() {
   return (
     <div className='bg-[#0b0e13] text-[#fff]'>
         <BrowserRouter>
-        <Header data={nbaApiData}/>
+        <Header/>
           <Routes>
             <Route path="/" element={
                 nbaApiData?.finalData?.length > 0 ? 

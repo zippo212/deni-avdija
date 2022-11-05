@@ -11,7 +11,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat1?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.PTS}</td>
                         </tr>
@@ -26,7 +26,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat2?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.REB}</td>
                         </tr>
@@ -41,7 +41,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat3?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.AST}</td>
                         </tr>
@@ -56,7 +56,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat8?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.BLK}</td>
                         </tr>
@@ -71,7 +71,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat4?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.STL}</td>
                         </tr>
@@ -86,7 +86,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat5?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.FG_PCT}</td>
                         </tr>
@@ -101,7 +101,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat7?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.FG3_PCT}</td>
                         </tr>
@@ -116,7 +116,7 @@ export default function SeasonLeaders({ data, type }) {
                 </thead>
                 <tbody>
                     {data.HomePageStat6?.map(stat => 
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap">
+                        <tr key={stat.PLAYER_ID || stat.TEAM_ID} className="border-b border-[#0b0e13] whitespace-nowrap">
                             <td className="py-2 pl-3">{stat[type]}</td>
                             <td className="py-2">{stat.FT_PCT}</td>
                         </tr>

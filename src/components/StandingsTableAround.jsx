@@ -27,9 +27,9 @@ export default function StandingsTableAround({ data,conf }) {
                             <th scope='col' className='py-2 md:py-3 px-3'>DIFF</th>
                         </tr>
                     </thead>
-                    {conference.map((game,i) => 
                     <tbody>
-                        <tr className="border-b border-[#0b0e13] whitespace-nowrap" 
+                    {conference.map((game,i) => 
+                        <tr key={game.TeamID} className="border-b border-[#0b0e13] whitespace-nowrap" 
                             style={{backgroundColor: i % 2 === 0 ? "#1e2633" : "#0b0e13",
                             borderBottom: i === 5 ? '2px dashed' : i === 9 ? '2px solid' : ''
                             }}>
@@ -49,8 +49,8 @@ export default function StandingsTableAround({ data,conf }) {
                             <td className="py-1 md:py-2.5 px-4">{game.OppPointsPG}</td>
                             <td className="py-1 md:py-2.5 px-4">{game.DiffPointsPG}</td>
                         </tr>
-                    </tbody>
                     )}
+                    </tbody>
                 </table>
             </div>
         </div>  
