@@ -32,13 +32,20 @@ function App() {
       async function fetchMyAPI() {
       try {
         const results = await Promise.all([
-          fetch('/nba'),
-          fetch('/game_logs'),
-          fetch('/standings'),
-          fetch('/team_lead'),
-          fetch('/player_lead'),
-          fetch('/player_info'),
-          fetch('/next_games')
+          fetch('https://api.npoint.io/839c22828e6d1580adc6'),
+          fetch('https://api.npoint.io/2ed3576337a13a0bb5f1'),
+          fetch('https://api.npoint.io/2ce9f66b5c9c19b9fbf9'),
+          fetch('https://api.npoint.io/717374f16152671f95b9'),
+          fetch('https://api.npoint.io/f27c7d729539df71da5f'),
+          fetch('https://api.npoint.io/582e897ceb1054926f1f'),
+          fetch('https://api.npoint.io/d8434e9fc3b6e9b41aa6'),
+          // fetch('/nba'),
+          // fetch('/game_logs'),
+          // fetch('/standings'),
+          // fetch('/team_lead'),
+          // fetch('/player_lead'),
+          // fetch('/player_info'),
+          // fetch('/next_games')
         ])
         const finalData = await Promise.all(results.map(result => result.json())) 
           localStorage.setItem('data',JSON.stringify({finalData, receivedAt: new Date()}))
