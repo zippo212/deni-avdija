@@ -7,15 +7,22 @@ import Standings from './Standings'
 
 export default function Home({ gameLogs,seasonData,careerData,standings,profile,next }) {
   return (
-    <>
-        <GameLogs data={gameLogs} next={next}/>
+    <> 
+      <section id='game-logs'>
+          <GameLogs data={gameLogs} next={next}/>
+      </section>
+      <section id='season-totals'>
         <SeasonTotals data={seasonData}/>
+      </section>
+      <section id='all-time'>
         <AllTime data={careerData}/>
+      </section>
+      <section id='standings'>
         <Standings data={standings}/>
-        <section id='profile'>
-            <Profile data={profile}/>
-        </section>
-        
+      </section>
+      <section id='profile'>
+          <Profile data={profile}/>
+      </section>
     </>
   )
 }
