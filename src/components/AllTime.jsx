@@ -6,7 +6,8 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function AllTime({ data }) {
   const [isPressed , setIsPressed] = useState(false)
-
+  const title = ['CAREER','All Career Stats','CAREER']
+  
   function handleClick() {
     setIsPressed(!isPressed)
   }
@@ -23,7 +24,7 @@ export default function AllTime({ data }) {
               <FontAwesomeIcon icon={faCirclePlus} size="lg" color="black"/>
             </button>
         </div>
-        <SeasonTotalsDetailed toggle={isPressed} data={data} handle={handleClick} />
+        <SeasonTotalsDetailed toggle={isPressed} data={data} handle={handleClick} title={title}/>
     </div>
   )
 }

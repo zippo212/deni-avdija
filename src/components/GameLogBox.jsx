@@ -1,31 +1,37 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faW, faL } from "@fortawesome/free-solid-svg-icons";
 
 export default function GameLogBox({ data,next }) {
-  const wIcon = <FontAwesomeIcon icon={faW} size="sm" color="#00ff4c" />;
-  const lIcon = <FontAwesomeIcon icon={faL} size="sm" color="#ff002d" />;
   return (
-    <div className="bg-[#1e2633] h-40 md:h-44 w-full flex flex-row space-x-1 items-center">
+    <div className="bg-[#1e2633] h-48 md:h-52 lg:h-54 w-full flex flex-col items-center space-y-0.5 justify-center">
+      <div className="flex w-full space-x-1 items-center">
       {data.slice(0, 4).reverse().map((game) => (
-        <div key={game.Game_ID} className="bg-[#00b9bf] h-32 md:h-36 flex-1 flex flex-col justify-center items-center">
-          <p className="font-extrabold text-xs">{game.GAME_DATE}</p>
-          <p className="font-extrabold text-xs md:text-sm">{game.MATCHUP}</p>
-          <p className="font-extrabold text-xs md:text-sm">PTS: {game.PTS}</p>
-          <p className="font-extrabold text-xs md:text-sm">AST: {game.AST}</p>
-          <p className="font-extrabold text-xs md:text-sm">REB: {game.REB}</p>
-          <p className="font-extrabold text-xs md:text-sm">MIN: {game.MIN}</p>
-          <p className="font-medium">{game.WL === "W" ? wIcon : lIcon}</p>
+        <div key={game.Game_ID} className="bg-[#00b9bf] h-32 md:h-36 flex-1 flex flex-col items-center relative">
+          <p className="flex flex-col items-center">
+            <span className="font-semibold text-xs">{game.GAME_DATE}</span>
+            <span className="font-extrabold text-xs md:text-sm">{game.MATCHUP}</span>
+          </p>
+          <p className="flex flex-col items-center w-full">
+            <span className="font-bold text-sm md:text-lg block">PTS: {game.PTS}</span>
+            <span className="font-bold text-sm md:text-lg block">AST: {game.AST}</span>
+            <span className="font-bold text-sm md:text-lg block">REB: {game.REB}</span>
+            <span className="font-bold text-sm md:text-lg block">MIN: {game.MIN}</span>
+          </p>
+          <span className='block absolute bottom-0 right-0 border-b-[35px] sm:border-b-[45px] border-l-[35px] sm:border-l-[45px] border-l-transparent'
+                style={{borderBottomColor: game.WL === "W" ? '#68d391' : '#fc8181'}}
+          >
+            <span className="text-sm sm:text-lg font-semibold sm:font-bold absolute right-1 top-4 sm:top-5 block">{game.WL === "W" ? 'W' : 'L'}</span>
+          </span>
         </div>
       ))}
-        <div className="relative bg-[#fe317e] h-32 md:h-36 flex-1 flex flex-col justify-evenly items-center">
-          <span className="font-bold text-xs absolute -top-3.5 md:-top-4">NEXT GAME</span>
-          <p className="font-bold text-xs text-center">{next.GAME_DATE}
-            <span className="font-bold text-xs md:text-sm block">{next.GAME_TIME}</span>
+      </div>
+        <div className="relative bg-[#fe317e] h-8 md:h-10 flex justify-evenly items-center w-full">
+          <span className="font-bold text-xs">NEXT GAME</span>
+          <p className="font-bold text-sm md:text-sm text-center">{next.HOME_TEAM_ABBREVIATION} ({next.HOME_WL})
+            <span className="font-bold text-xs md:text-sm px-2 sm:px-4">VS</span>
+            <span className="font-bold text-sm md:text-sm">{next.VISITOR_TEAM_ABBREVIATION} ({next.VISITOR_WL})</span>
           </p>
-          <p className="font-bold text-xs md:text-sm text-center">{next.HOME_TEAM_ABBREVIATION} ({next.HOME_WL})
-          <span className="font-bold text-xs md:text-sm block">VS</span>
-          <span className="font-bold text-xs md:text-sm block">{next.VISITOR_TEAM_ABBREVIATION} ({next.VISITOR_WL})</span>
+          <p className="font-semibold text-xs text-center">{next.GAME_DATE}
+            <span className="font-bold text-xs md:text-sm block">{next.GAME_TIME}</span>
           </p>
         </div>
     </div>

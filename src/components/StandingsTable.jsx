@@ -7,7 +7,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 export default function StandingsTable({ data }) {
     const icon = <FontAwesomeIcon icon={faStar} size="sm" color="#ffd600"/>
   return (
-    <div className='bg-[#1e2633]  w-full md:w-10/12 flex flex-row space-x-1 items-center '>
+    <div className='bg-[#1e2633]  w-full md:w-10/12 flex flex-col justify-center '>
         <div className="overflow-x-auto">
             <table className="table-auto w-full text-sm text-left text-white">
                 <thead className='"text-xs text-[#4a5568] uppercase bg-[#0b0e13]'>
@@ -55,6 +55,7 @@ export default function StandingsTable({ data }) {
                 </tbody>
             </table>
         </div>
+        <span className='text-center text-[#718096] text-xs sm:text-sm bg-[#13181f] pt-2'>{icon} - Represents current team of Deni Avdija</span>
     </div>  
   )
 }

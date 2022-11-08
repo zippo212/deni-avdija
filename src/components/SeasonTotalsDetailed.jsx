@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function SeasonTotalsDetailed({ data, toggle, handle }) {
+export default function SeasonTotalsDetailed({ data, toggle, handle,title }) {
     const box = useRef();
     const tl = useRef();
 
@@ -36,8 +36,8 @@ export default function SeasonTotalsDetailed({ data, toggle, handle }) {
         <div className='bg-white pt-3 sticky top-0 shadow-lg'>
             <h2 className='flex flex-col items-center space-y-0.5'>
                 <span className='text-[#a0aec0] text-xs'>DENI AVDIJA STATS</span>
-                <span className='text-black font-bold text-2xl'>CURRENT SEASON</span>
-                <span className='text-[#7c8b97] text-sm font-medium'>All Season Stats</span>
+                <span className='text-black font-bold text-2xl'>{title[0]}</span>
+                <span className='text-[#7c8b97] text-sm font-medium'>{title[1]}</span>
                 <p className='w-full pt-3 text-center'>
                     <span className='bg-[#00b9bf] w-1/2 inline-block p-1 text-white text-sm'>DENI AVDIJA</span>
                     <span className='bg-[#fe317e] w-1/2 inline-block p-1 text-white text-sm'>WASHINGTON WIZARDS</span>
@@ -51,9 +51,9 @@ export default function SeasonTotalsDetailed({ data, toggle, handle }) {
         </div>
         <div className='h-full overflow-auto pb-36'>
         <h3 className='text-[#83939c] text-xs text-center py-6'>
-            <span className='bg-[#edf2f7] p-2 rounded-full'>SEASON 2022-23</span>
+            <span className='bg-[#edf2f7] p-2 rounded-full'>{title[2]}</span>
         </h3>
-        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 xl:gap-10  text-black text-center w-11/12 2xl:w-8/12 mx-auto">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 xl:gap-10  text-black text-center w-full sm:w-11/12 2xl:w-8/12 mx-auto">
             <StatsBox stat={data.GP} bg='#00b9bf' title='GAMES PLAYED'/>
             <StatsBox stat={(data.MIN / data.GP).toFixed(1)} bg='#fe317e' title='MINUTES PER GAME'/>
             <StatsBox stat={(data.PTS / data.GP).toFixed(1)} bg='#00b9bf' title='POINTS PER GAME'/>

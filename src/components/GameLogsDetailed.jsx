@@ -31,8 +31,8 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
     }, [toggle])
 
   return (
-    <div className='fixed top-0 lg:top-5 bg-white h-full lg:h-[calc(100%-1.25rem)] w-full lg:w-[calc(100%-2rem)] z-50 shadow-lg translate-y-full hidden overflow-y-auto' ref={box}>
-        <div className='bg-white py-3 relative'>
+    <div className='fixed top-0 lg:top-5 bg-white h-full lg:h-[calc(100%-1.25rem)] w-full lg:w-[calc(100%-2rem)] z-50 shadow-lg translate-y-full hidden' ref={box}>
+        <div className='bg-white pt-3 sticky top-0 shadow-lg'>
             <h2 className='flex flex-col items-center space-y-0.5'>
                 <span className='text-[#a0aec0] text-xs'>DENI AVDIJA STATS</span>
                 <span className='text-black font-bold text-2xl'>ALL GAME LOGS</span>
@@ -44,11 +44,15 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
             </h2>
             <button
                 onClick={() => handle(!toggle)}
-                className='bg-[#ffd600] px-7 py-4 absolute top-0 right-0'>
+                className='bg-[#ffd600] px-6 py-4 absolute top-0 right-0'>
                 <FontAwesomeIcon icon={faXmark} size="lg" color="black"/>
             </button>
         </div>
-        <div className="overflow-x-auto">
+        <div className="h-full overflow-auto pb-32">
+            <h3 className='text-[#83939c] text-xs text-center py-6'>
+                <span className='bg-[#edf2f7] p-2 rounded-full'>SEASON 2022-23</span>
+            </h3>
+            <div className="overflow-x-auto">
             <table className="table-auto w-full text-sm text-left text-gray-500">
                 <thead className='"text-xs text-[#4a5568] uppercase bg-gray-300'>
                     <tr>
@@ -107,6 +111,7 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
                 )}
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
   )

@@ -13,15 +13,15 @@ export default function Header() {
 
         <li><NavLink to="/" end
         className={({ isActive }) => (isActive ? 'text-[#ffd600]' : '')}
-        >Home</NavLink></li>
+        ><span className='py-4 px-2'>Home</span></NavLink></li>
 
         <li><HashLink to='/#profile' 
         scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })}
-        >Profile</HashLink></li>
+        ><span className='py-4 px-2'>Profile</span></HashLink></li>
 
         <li><NavLink to='/around'
         className={({ isActive }) => (isActive ? 'text-[#ffd600]' : '')}
-        >Around the league</NavLink></li>
+        ><span className='py-4 px-2'>Around the league</span></NavLink></li>
 
       </ul>
     </nav>

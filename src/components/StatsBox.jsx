@@ -3,7 +3,7 @@ import React from 'react'
 export default function StatsBox({ bg, stat, title }) {
   return (
     <li className='space-y-0.5'>
-        <h4 className='w-full bg-[#e2e8f0] text-[#4a5568] font-semibold text-[0.7rem] md:text-xs py-1.5'>{title}</h4>
+        <h4 className='w-full bg-[#e2e8f0] text-[#4a5568] font-semibold text-[0.7rem] md:text-xs py-1 md:py-1.5'>{title}</h4>
         <div>
             <span
             style={{backgroundColor: bg}}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import {
   BrowserRouter,
   Routes,
@@ -7,13 +7,15 @@ import {
 import Around from './components/Around'
 import Header from './components/Header'
 import Home from './components/Home'
-import { ColorRing } from  'react-loader-spinner'
+import load from './img/giphy.gif'
+
 
 function App() {
-
+  const effectRan = useRef(false)
   const [ nbaApiData ,setNbaApiData ] = useState(JSON.parse(localStorage.getItem('data')) || [])
 
   useEffect(() => {
+    if (effectRan.current === false) {
       const getDataFromLocalStorage = () => {
         if(localStorage.getItem('data'))
           return JSON.parse(localStorage.getItem('data')) || null;
@@ -30,22 +32,23 @@ function App() {
       };
 
       async function fetchMyAPI() {
+        const headers = {
+          'X-Master-Key': process.env.REACT_APP_SECRET_X_KEY,
+          'X-BIN-META': false,
+        }
       try {
         const results = await Promise.all([
-          fetch('https://api.npoint.io/839c22828e6d1580adc6'),
-          fetch('https://api.npoint.io/2ed3576337a13a0bb5f1'),
-          fetch('https://api.npoint.io/2ce9f66b5c9c19b9fbf9'),
-          fetch('https://api.npoint.io/717374f16152671f95b9'),
-          fetch('https://api.npoint.io/f27c7d729539df71da5f'),
-          fetch('https://api.npoint.io/582e897ceb1054926f1f'),
-          fetch('https://api.npoint.io/d8434e9fc3b6e9b41aa6'),
-          // fetch('/nba'),
-          // fetch('/game_logs'),
-          // fetch('/standings'),
-          // fetch('/team_lead'),
-          // fetch('/player_lead'),
-          // fetch('/player_info'),
-          // fetch('/next_games')
+          fetch(`https://getpantry.cloud/apiv1/pantry/${process.env.REACT_APP_SECRET_ID}/basket/career_stats`),
+          fetch(`https://getpantry.cloud/apiv1/pantry/${process.env.REACT_APP_SECRET_ID}/basket/game_logs`),
+          fetch('https://api.jsonbin.io/v3/b/6366992e2b3499323bf68a4b/latest', {
+            headers: headers
+	        }),
+          fetch('https://api.jsonbin.io/v3/b/6367a6092b3499323bf74585/latest', {
+		        headers: headers
+	        }),
+          fetch('https://api.jsonbin.io/v3/b/6367a61565b57a31e6af080e/latest', {
+		        headers: headers
+	        }),
         ])
         const finalData = await Promise.all(results.map(result => result.json())) 
           localStorage.setItem('data',JSON.stringify({finalData, receivedAt: new Date()}))
@@ -55,12 +58,15 @@ function App() {
       }
     }
     const data = getDataFromLocalStorage();
-    if (!data || areDataOutdated(data && data.receivedAt)) {
+    if (!data || areDataOutdated(data && data.receivedAt) || data.finalData.length < 1) {
       // then fetch your data
       fetchMyAPI()
     }
+    return () => {
+      effectRan.current = true
+    }
+    }
     }, [])
-
 
   return (
     <div className='bg-[#0b0e13] text-[#fff]'>
@@ -74,31 +80,26 @@ function App() {
             seasonData={nbaApiData.finalData[0].SeasonTotalsRegularSeason[2]} 
             careerData={nbaApiData.finalData[0].CareerTotalsRegularSeason[0]} 
             standings={nbaApiData.finalData[2].Standings} 
-            profile={nbaApiData.finalData[5]} 
-            next={nbaApiData.finalData[6].NextNGames[0]}/> : 
-            <ColorRing
-            visible={true}
-            height="90"
-            width="90"
-            ariaLabel="blocks-loading"
-            wrapperClass="h-screen mx-auto"
-            colors={['#00b9bf', '#fe317e', '#fb015f', '#ffd600', '#00b9bf']}
-            />
+            profile={nbaApiData.finalData[4]} 
+            next={nbaApiData.finalData[4][1].NextNGames[0]}/> : 
+            <div className='w-full absolute bottom-12 space-y-1'>
+              <p className='text-center font-semibold'>Loading</p>
+              <img src={load} alt="" className='h-32 w-32 mx-auto rounded-full opacity-70'/>
+            </div>
             } />
             <Route path='/around' element={
               nbaApiData?.finalData?.length > 0 ?
-            <Around standings={nbaApiData.finalData[2].Standings} team={nbaApiData.finalData[3]} player={nbaApiData.finalData[4]}/> : 
-            <ColorRing
-            visible={true}
-            height="90"
-            width="90"
-            ariaLabel="blocks-loading"
-            wrapperClass="h-screen mx-auto"
-            colors={['#00b9bf', '#fe317e', '#fb015f', '#ffd600', '#00b9bf']}
-            />
+            <Around standings={nbaApiData.finalData[2].Standings} team={nbaApiData.finalData[3][1]} player={nbaApiData.finalData[3][0]}/> : 
+            <div className='w-full absolute bottom-12 space-y-1'>
+              <p className='text-center font-semibold'>Loading</p>
+              <img src={load} alt="" className='h-32 w-32 mx-auto rounded-full opacity-70'/>
+            </div>
             } />
           </Routes>
         </BrowserRouter>
+        {nbaApiData?.finalData?.length > 0 && 
+        <span className='bg-[#141a23] text-[#a0aec089] py-2.5 px-2 fixed sm:sticky top-12 sm:bottom-0 right-0 sm:left-0 text-xs z-40'>{nbaApiData.finalData[4][2]['time']}</span>
+        }
     </div>
   )
 }
