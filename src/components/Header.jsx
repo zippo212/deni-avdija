@@ -26,7 +26,7 @@ export default function Header() {
       </ul>
     </nav>
     <div className='flex justify-center py-20 relative'>
-    <img className='h-[450px] md:h-[600px] lg:h-[650px] xl:h-[700px] absolute -top-24 -left-24 md:-top-28 md:-left-28 lg:-top-32 lg:-left-32 xl:-top-36 xl:-left-36 opacity-5' src={teamLogo} alt="" />
+    <img className='h-[400px] sm:h-[450px] md:h-[600px] lg:h-[650px] xl:h-[700px] absolute -top-20 sm:-top-24 -left-20 sm:-left-24 md:-top-28 md:-left-28 lg:-top-32 lg:-left-32 xl:-top-36 xl:-left-36 opacity-5' src={teamLogo} alt="" />
       <h1 className='font-extrabold text-6xl'>
         DENI
         <br/>

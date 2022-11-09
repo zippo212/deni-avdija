@@ -53,60 +53,60 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
                 <span className='bg-[#edf2f7] p-2 rounded-full'>SEASON 2022-23</span>
             </h3>
             <div className="overflow-x-auto">
-            <table className="table-auto w-full text-sm text-left text-gray-500">
+            <table className="table-auto w-full text-xs sm:text-sm text-left text-gray-500 whitespace-nowrap">
                 <thead className='"text-xs text-[#4a5568] uppercase bg-gray-300'>
                     <tr>
-                        <th scope='col' className='py-3 px-5 md:px-6'>GAME DATE</th>
+                        <th scope='col' className='py-3 px-2 md:px-6'>GAME DATE</th>
                         <th scope='col' className='py-3 px-5 md:px-6'>MATCHUP</th>
-                        <th scope='col' className='py-3 px-3'>W/L</th>
-                        <th scope='col' className='py-3 px-3'>MIN</th>
-                        <th scope='col' className='py-3 px-3'>PTS</th>
-                        <th scope='col' className='py-3 px-3'>FGM</th>
-                        <th scope='col' className='py-3 px-3'>FGA</th>
-                        <th scope='col' className='py-3 px-3'>FG%</th>
-                        <th scope='col' className='py-3 px-3'>3PM</th>
-                        <th scope='col' className='py-3 px-3'>3PA</th>
-                        <th scope='col' className='py-3 px-3'>3P%</th>
-                        <th scope='col' className='py-3 px-3'>FTM</th>
-                        <th scope='col' className='py-3 px-3'>FTA</th>
-                        <th scope='col' className='py-3 px-3'>FT%</th>
-                        <th scope='col' className='py-3 px-3'>OREB</th>
-                        <th scope='col' className='py-3 px-3'>DREB</th>
-                        <th scope='col' className='py-3 px-3'>REB</th>
-                        <th scope='col' className='py-3 px-3'>AST</th>
-                        <th scope='col' className='py-3 px-3'>STL</th>
-                        <th scope='col' className='py-3 px-3'>BLK</th>
-                        <th scope='col' className='py-3 px-3'>TOV</th>
-                        <th scope='col' className='py-3 px-3'>PF</th>
-                        <th scope='col' className='py-3 px-3'>+/-</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>W/L</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>MIN</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>PTS</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>FGM</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>FGA</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>FG%</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>3PM</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>3PA</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>3P%</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>FTM</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>FTA</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>FT%</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>OREB</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>DREB</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>REB</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>AST</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>STL</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>BLK</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>TOV</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>PF</th>
+                        <th scope='col' className='py-3 px-2 sm:px-3'>+/-</th>
                     </tr>
                 </thead>
                 <tbody>
                 {data.map((game,i) => 
                     <tr key={game.Game_ID} className="md:whitespace-nowrap text-white font-semibold" style={{backgroundColor: i % 2 === 0 ? "#00b9bf" : "#fe317e"}}>
-                        <td className="py-1 md:py-4 px-5 md:px-6">{game.GAME_DATE}</td>
-                        <td className="py-1 md:py-4 px-5 md:px-6">{game.MATCHUP}</td>
-                        <td className="py-1 md:py-4 px-4">{game.WL}</td>
-                        <td className="py-1 md:py-4 px-4">{game.MIN}</td>
-                        <td className="py-1 md:py-4 px-4">{game.PTS}</td>
-                        <td className="py-1 md:py-4 px-4">{game.FGM}</td>
-                        <td className="py-1 md:py-4 px-4">{game.FGA}</td>
-                        <td className="py-1 md:py-4 px-4">{(game.FG_PCT *100).toFixed(1)}</td>
-                        <td className="py-1 md:py-4 px-4">{game.FG3M}</td>
-                        <td className="py-1 md:py-4 px-4">{game.FG3A}</td>
-                        <td className="py-1 md:py-4 px-4">{(game.FG3_PCT *100).toFixed(1)}</td>
-                        <td className="py-1 md:py-4 px-4">{game.FTM}</td>
-                        <td className="py-1 md:py-4 px-4">{game.FTA}</td>
-                        <td className="py-1 md:py-4 px-4">{(game.FT_PCT *100).toFixed(1)}</td>
-                        <td className="py-1 md:py-4 px-4">{game.OREB}</td>
-                        <td className="py-1 md:py-4 px-4">{game.DREB}</td>
-                        <td className="py-1 md:py-4 px-4">{game.REB}</td>
-                        <td className="py-1 md:py-4 px-4">{game.AST}</td>
-                        <td className="py-1 md:py-4 px-4">{game.STL}</td>
-                        <td className="py-1 md:py-4 px-4">{game.BLK}</td>
-                        <td className="py-1 md:py-4 px-4">{game.TOV}</td>
-                        <td className="py-1 md:py-4 px-4">{game.PF}</td>
-                        <td className="py-1 md:py-4 px-4">{game.PLUS_MINUS}</td>
+                        <td className="py-3 md:py-4 px-2 md:px-6">{game.GAME_DATE}</td>
+                        <td className="py-3 md:py-4 px-5 md:px-6">{game.MATCHUP}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.WL}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.MIN}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.PTS}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.FGM}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.FGA}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{(game.FG_PCT *100).toFixed(1)}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.FG3M}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.FG3A}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{(game.FG3_PCT *100).toFixed(1)}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.FTM}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.FTA}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{(game.FT_PCT *100).toFixed(1)}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.OREB}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.DREB}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.REB}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.AST}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.STL}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.BLK}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.TOV}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.PF}</td>
+                        <td className="py-3 md:py-4 px-3 sm:px-4">{game.PLUS_MINUS}</td>
                     </tr>
                 )}
                 </tbody>

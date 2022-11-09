@@ -8,7 +8,7 @@ export default function Around({ standings, team, player }) {
 
   return (
     <div className='lg:flex lg:space-x-4 lg:mx-4 pb-6'>
-        <div className='bg-[#13181f] w-11/12 lg:w-5/12 mt-6 flex flex-col items-center py-6 space-y-7 mx-auto z-40 relative'>
+        <div className='bg-[#13181f] w-full sm:w-11/12 lg:w-5/12 mt-6 flex flex-col items-center py-6 space-y-7 mx-auto z-40 relative'>
             <h4 className='font-bold text-lg'>standings</h4>
             <ul className='space-x-6 flex'>
                 <li 
@@ -24,7 +24,7 @@ export default function Around({ standings, team, player }) {
             </ul>
             <StandingsTableAround data={standings} conf={switchConference}/>
         </div>
-        <div className='bg-[#13181f] w-11/12 lg:w-7/12 mt-6 flex flex-col items-center py-6 space-y-7 mx-auto z-40'>
+        <div className='bg-[#13181f] w-full sm:w-11/12 lg:w-7/12 mt-6 flex flex-col items-center py-6 space-y-7 mx-auto z-40'>
             <h4 className='font-bold text-lg'>season leaders</h4>
             <ul className='space-x-6 flex'>
                 <li
