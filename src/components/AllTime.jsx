@@ -19,7 +19,7 @@ export default function AllTime({ data }) {
             <Box data={data}/>
             <button
               onClick={handleClick}
-              className='w-40 h-9 rounded-full bg-[#ffd600] space-x-2'>
+              className='w-40 h-9 rounded-full bg-[#ffd600] space-x-2 hover:scale-105 transition ease-in-out'>
               <span className='text-black font-semibold text-sm pl-2 pr-1'>DETAILED STATS</span> 
               <FontAwesomeIcon icon={faCirclePlus} size="lg" color="black"/>
             </button>

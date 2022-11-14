@@ -7,6 +7,7 @@ import {
 import Around from './components/Around'
 import Header from './components/Header'
 import Home from './components/Home'
+import ScrollToTop from './components/ScrollToTop';
 import load from './img/giphy.gif'
 
 
@@ -32,10 +33,6 @@ function App() {
       };
 
       async function fetchMyAPI() {
-        // const headers = {
-        //   'X-Master-Key': process.env.REACT_APP_SECRET_X_KEY,
-        //   'X-BIN-META': false,
-        // }
       try {
         const results = await Promise.all([
           fetch(`${process.env.REACT_APP_SECRET_URL}/career_stats.json`),
@@ -66,6 +63,7 @@ function App() {
     <div className='bg-[#0b0e13] text-[#fff]'>
         <BrowserRouter>
         <Header/>
+        <ScrollToTop />
           <Routes>
             <Route path="/" element={
                 nbaApiData?.finalData?.length > 0 ? 

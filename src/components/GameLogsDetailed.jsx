@@ -48,13 +48,13 @@ export default function GameLogsDetailed({ data, toggle, handle }) {
                 <FontAwesomeIcon icon={faXmark} size="lg" color="black"/>
             </button>
         </div>
-        <div className="h-full overflow-auto pb-32">
+        <div className="h-full">
             <h3 className='text-[#83939c] text-xs text-center py-6'>
                 <span className='bg-[#edf2f7] p-2 rounded-full'>SEASON 2022-23</span>
             </h3>
-            <div className="overflow-x-auto">
+            <div className="h-[calc(100%-12rem)] overflow-y-scroll">
             <table className="table-auto w-full text-xs sm:text-sm text-left text-gray-500 whitespace-nowrap">
-                <thead className='"text-xs text-[#4a5568] uppercase bg-gray-300'>
+                <thead className='"text-xs text-[#4a5568] uppercase bg-gray-300 sticky top-0'>
                     <tr>
                         <th scope='col' className='py-3 px-2 md:px-6'>GAME DATE</th>
                         <th scope='col' className='py-3 px-5 md:px-6'>MATCHUP</th>
