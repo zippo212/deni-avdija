@@ -25,30 +25,24 @@ function App() {
         if (!data.receivedAt || isNaN(Date.parse(receivedAt))) {
             return true;
         }
-        // Basically, we take the actual date, and we removed 1 hours
-        const checkDate = new Date(new Date().getTime() - (60 * 60 * 1 * 1000));
+        // Basically, we take the actual date, and we removed 2 hours
+        const checkDate = new Date(new Date().getTime() - (60 * 60 * 2 * 1000));
         // If the data received is lower than the checkDate, it means that data are outdated.
         return new Date(receivedAt).getTime() < checkDate.getTime();
       };
 
       async function fetchMyAPI() {
-        const headers = {
-          'X-Master-Key': process.env.REACT_APP_SECRET_X_KEY,
-          'X-BIN-META': false,
-        }
+        // const headers = {
+        //   'X-Master-Key': process.env.REACT_APP_SECRET_X_KEY,
+        //   'X-BIN-META': false,
+        // }
       try {
         const results = await Promise.all([
-          fetch(`https://getpantry.cloud/apiv1/pantry/${process.env.REACT_APP_SECRET_ID}/basket/career_stats`),
-          fetch(`https://getpantry.cloud/apiv1/pantry/${process.env.REACT_APP_SECRET_ID}/basket/game_logs`),
-          fetch('https://api.jsonbin.io/v3/b/6366992e2b3499323bf68a4b/latest', {
-            headers: headers
-	        }),
-          fetch('https://api.jsonbin.io/v3/b/6367a6092b3499323bf74585/latest', {
-		        headers: headers
-	        }),
-          fetch('https://api.jsonbin.io/v3/b/6367a61565b57a31e6af080e/latest', {
-		        headers: headers
-	        }),
+          fetch(`${process.env.REACT_APP_SECRET_URL}/career_stats.json`),
+          fetch(`${process.env.REACT_APP_SECRET_URL}/game_logs.json`),
+          fetch(`${process.env.REACT_APP_SECRET_URL}/set_standings.json`),
+          fetch(`${process.env.REACT_APP_SECRET_URL}/around.json`),
+          fetch(`${process.env.REACT_APP_SECRET_URL}/info_next.json`),
         ])
         const finalData = await Promise.all(results.map(result => result.json())) 
           localStorage.setItem('data',JSON.stringify({finalData, receivedAt: new Date()}))

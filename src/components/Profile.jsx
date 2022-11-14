@@ -7,7 +7,7 @@ export default function Profile({ data }) {
   return (
     <div className='flex flex-col items-center pt-6'>
         <h4 className='text-[#ffd600] font-semibold'>Profile</h4>
-        <div className='bg-[#13181f] w-full md:w-10/12 lg:w-9/12 xl:w-6/12 my-6 flex flex-col items-center py-6 '>
+        <div className='bg-[#13181f] w-full md:w-10/12 lg:w-9/12 xl:w-6/12 my-6 flex flex-col items-center py-6 z-40'>
             <div className='w-full md:w-11/12 flex justify-between'>
                 <div>
                     <h5 className='text-[#a0aec0]'>{`${info?.TEAM_CITY} ${info?.TEAM_CODE} | #${info?.JERSEY} | ${info?.POSITION}`}</h5>
