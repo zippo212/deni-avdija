@@ -1,13 +1,16 @@
 import React from 'react'
 import deniImg from '../img/washington-wizards-deni-avdija-min--hcrs3yiz.png'
+import Highs from './Highs'
 
 export default function Profile({ data }) {
-    const info = data[0].CommonPlayerInfo ? data[0].CommonPlayerInfo[0] : []
-    const headline = data[0].PlayerHeadlineStats ? data[0].PlayerHeadlineStats[0] : []
+    const highs = data[0]
+    const playerData = data[4]
+    const info = playerData[0].CommonPlayerInfo ? playerData[0].CommonPlayerInfo[0] : []
+    const headline = playerData[0].PlayerHeadlineStats ? playerData[0].PlayerHeadlineStats[0] : []
   return (
     <div className='flex flex-col items-center pt-6'>
         <h4 className='text-[#ffd600] font-semibold'>Profile</h4>
-        <div className='bg-[#13181f] w-full md:w-10/12 lg:w-9/12 xl:w-6/12 my-6 flex flex-col items-center py-6 z-40'>
+        <div className='bg-[#13181f] w-full md:w-10/12 lg:w-9/12 xl:w-7/12 2xl:w-6/12 my-6 flex flex-col items-center py-6 z-40'>
             <div className='w-full md:w-11/12 flex justify-between'>
                 <div>
                     <h5 className='text-[#a0aec0]'>{`${info?.TEAM_CITY} ${info?.TEAM_CODE} | #${info?.JERSEY} | ${info?.POSITION}`}</h5>
@@ -83,6 +86,10 @@ export default function Profile({ data }) {
                         </div>
                     </div>
                 </div>
+            </div>
+            <h4 className='font-bold text-lg py-6'>PERSONAL HIGHS</h4>
+            <div className='w-full md:w-11/12 flex space-x-4'>
+                <Highs data={highs}/>
             </div>
         </div>
     </div>

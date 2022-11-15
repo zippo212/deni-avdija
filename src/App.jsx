@@ -39,7 +39,7 @@ function App() {
           fetch(`${process.env.REACT_APP_SECRET_URL}/game_logs.json`),
           fetch(`${process.env.REACT_APP_SECRET_URL}/set_standings.json`),
           fetch(`${process.env.REACT_APP_SECRET_URL}/around.json`),
-          fetch(`${process.env.REACT_APP_SECRET_URL}/info_next.json`),
+          fetch(`${process.env.REACT_APP_SECRET_URL}/info.json`),
         ])
         const finalData = await Promise.all(results.map(result => result.json())) 
           localStorage.setItem('data',JSON.stringify({finalData, receivedAt: new Date()}))
@@ -72,8 +72,8 @@ function App() {
             seasonData={nbaApiData.finalData[0].SeasonTotalsRegularSeason[2]} 
             careerData={nbaApiData.finalData[0].CareerTotalsRegularSeason[0]} 
             standings={nbaApiData.finalData[2].Standings} 
-            profile={nbaApiData.finalData[4]} 
-            next={nbaApiData.finalData[4][1].NextNGames[0]}/> : 
+            profile={nbaApiData.finalData} 
+            next={nbaApiData.finalData[0].NextGame[0]}/> : 
             <div className='w-full absolute bottom-12 space-y-1'>
               <p className='text-center font-semibold'>Loading</p>
               <img src={load} alt="" className='h-32 w-32 mx-auto rounded-full opacity-70'/>
@@ -90,7 +90,7 @@ function App() {
           </Routes>
         </BrowserRouter>
         {nbaApiData?.finalData?.length > 0 && 
-        <span className='bg-[#141a23] text-[#a0aec089] py-2.5 px-2 fixed sm:sticky top-12 sm:bottom-0 right-0 sm:left-0 text-xs z-40'>{nbaApiData.finalData[4][2]['time']}</span>
+        <span className='bg-[#141a23] text-[#a0aec089] py-2.5 px-2 fixed sm:sticky top-12 sm:bottom-0 right-0 sm:left-0 text-xs z-40'>{nbaApiData.finalData[4][1]['time']}</span>
         }
     </div>
   )
