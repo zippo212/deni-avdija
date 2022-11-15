@@ -26,9 +26,9 @@ export default function GameLogBox({ data,next }) {
       </div>
         <div className="relative bg-[#fe317e] h-8 md:h-10 flex justify-evenly items-center w-full">
           <span className="font-bold text-xs">NEXT GAME</span>
-          <p className="font-bold text-sm md:text-sm text-center">{next.PLAYER_TEAM_ABBREVIATION} ({next.HOME_WL})
+          <p className="font-bold text-sm md:text-sm text-center">{next.PLAYER_TEAM_ABBREVIATION}
             <span className="font-bold text-xs md:text-sm px-2 sm:px-4">VS</span>
-            <span className="font-bold text-sm md:text-sm">{next.VS_TEAM_ABBREVIATION} ({next.VISITOR_WL})</span>
+            <span className="font-bold text-sm md:text-sm">{next.VS_TEAM_ABBREVIATION}</span>
           </p>
           <p className="font-semibold text-xs text-center">{next.GAME_DATE}
             <span className="font-bold text-xs md:text-sm block">{next.GAME_TIME}</span>
