@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <br>
+  <a href=https://kanban-board-management.vercel.app"><img src="https://github.com/zippo212/deni-avdija/blob/main/src/img/washington-wizards-deni-avdija-min--hcrs3yiz.png" alt="Acdija Logo" width="200"></a>
+  <br>
+  Deni Avdija | Stats
+  <br>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#license">License</a>
+</p>
 
-## Available Scripts
+<p align="center">
+  <img src="https://github.com/zippo212/deni-avdija/blob/main/src/img/deni.gif" alt="screenshot">
+</p>
+                                                                                                
+Our app is designed to provide comprehensive and up-to-date statistics for a Deni avdija. Whether you're a fan, a coach, or a fantasy basketball player, our app has the features you need to stay informed about the latest performance.        
+                                                                                                
+## Key Features
 
-In the project directory, you can run:
+* Player Profile: View detailed information about the player, including their stats, bio, and career highlights.
+* Game Logs: View the player's performance in each game of the current and previous seasons, including points, rebounds, assists, and other key statistics.
+* Season Averages: See how the player's statistics have changed over the course of the season, including points per game, rebounds per game, and more.
+* Career Averages: View the player's career averages for various statistical categories, such as points per game, rebounds per game, and more.
+* Table Standings: Keep track of the player's team's current standing in the league, including wins, losses, and percentage.
+* Next Game: See the player's team's schedule of the next game and the date and time.
+* League Standings: Keep track of the league standings, including wins, losses, and percentage for all teams.
+* League Leaders: View the top players in the league for various statistical categories, such as points per game, rebounds per game, and more.
 
-### `npm start`
+## How To Use
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A live version of the web app is available [Here](https://deni-avdija.vercel.app)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+# Clone this repository
+$ git clone https://github.com/zippo212/deni-avdija.git
 
-### `npm test`
+# Install dependencies
+$ npm install
+```
+* Start the development server by running `npm start` or `yarn start`. This will start the server at http://localhost:3000 and will automatically reload the page as you make changes to the code.
+* To build the production version of the app, run `npm run build` or `yarn build`. This will create a build folder in the root of the project, which you can then serve using a static server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## You may also like...
 
-### `npm run build`
+- [Proposal](https://github.com/zippo212/proposal-e-commerce) - e-commerce app
+- [Missing semicolon](https://github.com/zippo212/tech-blog) - blog site
+- [Kanban](https://github.com/zippo212/kanban-board) - kanban management app
+                                                                                                
+## License
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+MIT
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> [Portfolio](https://portfolio-zippo212.vercel.app/) &nbsp;
+> GitHub [@zippo212](https://github.com/zippo212)
